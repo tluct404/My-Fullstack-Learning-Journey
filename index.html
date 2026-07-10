@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coach feedback --- add a swimmer</title>
+
+  <style>
+    /*border becomes predictable*/
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Element selector */
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      color: #1a1a1a;
+      background-color: #eef2f5;
+      margin: 0;
+      padding: 40px; /*create a breathing room around whole body*/
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #5b6b7a;
+      margin-top: 0;
+      margin-bottom: 32px;
+    }
+
+    #signup {
+      background-color: #ffffff;
+      padding: 24px;
+      border: 1px solid #d4dde5;
+      border-radius: 10px;
+      margin: 0 auto;
+      max-width: 360px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    input {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #c3ccd6;
+      border-radius: 6px;
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #2563eb;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+
+    }
+  </style>
+</head>
+<body>
+  <h1>Add a Swimmer</h1>
+  <p class="subtitle">Log a new swimmer to your squad</p>
+  <form id="signup">
+    
+    <!-- for property links label to input -->
+    <label for="name">Name</label>
+    <input type="text" id="name" placeholder="e.g. Ava Chen">
+
+    <label for="age">Age</label>
+    <input type="text" id="age" placeholder="e.g. 18">
+
+    <button type="button">Add swimmer</button>
+  </form>
+</body>
+</html>
