@@ -79,3 +79,78 @@ body {
 
 .goal { font-size: 14px; color: #475569; margin: 0; }
 .goal strong { color: #1a1a1a; }
+
+.card.closed {
+  padding-bottom: 0.35rem;
+}
+ 
+/* The arrow button: a small centred arrow resting at the bottom middle */
+.toggle {
+  width: 100%;
+  margin-top: 0.35rem;
+  padding: 0.1rem 0;
+  border: none;
+  background: transparent;
+  color: #64748b;                   /* muted grey arrow */
+  cursor: pointer;
+  display: flex;                    /* these two lines centre the arrow */
+  justify-content: center;
+}
+ 
+/* A little more breathing room above the arrow once details are showing */
+.toggle.open {
+  margin-top: 0.6rem;
+}
+ 
+/* Darken the arrow a touch when the mouse is over it */
+.toggle:hover {
+  color: #0f172a;
+}
+ 
+/* The arrow itself, and the smooth turn when it flips */
+.toggle svg {
+  width: 22px;
+  height: 22px;
+  transition: transform 0.2s ease;  /* makes the flip glide instead of snap */
+}
+ 
+/* When the card is open, spin the arrow half a turn:
+   a down chevron becomes an up chevron. */
+.toggle.open svg {
+  transform: rotate(180deg);
+}
+ 
+/* A visible ring when reached by keyboard (Tab key), for accessibility */
+.toggle:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: -3px;
+  border-radius: 4px;
+}
+ 
+/* Small gap above the details when the card is open */
+.details {
+  margin-top: 0.25rem;
+}
+
+.search {
+  width: 100%;
+  box-sizing: border-box;      /* so padding does not push it wider than the page */
+  margin-bottom: 1rem;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font: inherit;               /* match the page font, not the browser default */
+}
+ 
+/* A soft blue ring while the box is being typed in */
+.search:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px #bfdbfe;
+}
+ 
+/* The message shown when nothing matches the search */
+.empty {
+  color: #64748b;
+  font-style: italic;
+}

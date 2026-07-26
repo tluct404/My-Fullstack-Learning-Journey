@@ -1,5 +1,6 @@
-// FILE LOCATION: app/page.tsx  (replace the whole file with this)
+'use client';
 
+import { useState } from 'react';
 import SwimmerCard from '@/components/SwimmerCard';
 import { Swimmer } from '@/types';
 
@@ -26,16 +27,34 @@ const squad: Swimmer[] = [
 ];
 
 export default function Home() {
+  const [query, setQuery] = useState('');
+
+  const visible = squad.filter((swimmer) => 
+    swimmer.name.toLowerCase().includes(query.toLowerCase())
+  );
+
   return (
     <main className="page">
       <h1>My Squad</h1>
 
+      <input 
+        className="search"
+        type="text" 
+        placeholder="Search by name: "
+        value={query}
+        onChange={(event) => setQuery(event.target.value)}
+      />
+
       {/* Render one SwimmerCard per swimmer. Same component, different data. */}
       <div className="squad">
-        {squad.map((swimmer) => (
+        {visible.map((swimmer) => (
           <SwimmerCard swimmer={swimmer} key={swimmer.name} />
         ))}
       </div>
+
+      {visible.length === 0 && (
+        <p className='empty'>No swimmers match &quot;{query}&quot;.</p>
+      )}
     </main>
   );
 }
